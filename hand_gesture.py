@@ -70,6 +70,9 @@ while True:
                 last_alert = 3
             elif fingers_up not in [2,1,3]:
                 last_alert = None
+            elif fingers_up == 4 and last_alert != 4:
+                play_sound('alert4.mp3')
+                last_alert = 4
 
     cv2.imshow('Hand Gesture', frame)
     key = cv2.waitKey(1) & 0xFF
